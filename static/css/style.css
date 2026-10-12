@@ -154,3 +154,4 @@ h3 { font-family:var(--font-body); font-weight:600; letter-spacing:0; }
 .hlavicka .logo img { height:56px; }
 @media (min-width:60rem){ .hero-foto{margin-right:0} .hero-foto img{object-fit:contain; object-position:right bottom} }
 .hero-text{padding-top:var(--space-4)}
+.lektori article{max-width:18rem}

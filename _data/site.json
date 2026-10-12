@@ -1,0 +1,58 @@
+{
+ "slug": "sk-ltclm",
+ "nazev": "Liptovské tanečné centrum",
+ "url": "https://webhunter-navrhy.github.io/sk-ltclm/",
+ "base": "/sk-ltclm/",
+ "lang": "sk",
+ "popis": "Liptovské tanečné centrum v Liptovskom Mikuláši: kurzy spoločenských a latinskoamerických tancov, orientálne brušné tance, individuálne lekcie a svadobný tanec.",
+ "navrh": true,
+ "domena": "",
+ "og_image": "hero.jpg",
+ "logo": "logo.png",
+ "theme_color": "#cc0066",
+ "typ": "LocalBusiness",
+ "ico": "37909932",
+ "kontakt": {
+  "email": "info@ltclm.sk",
+  "telefon": "+421 905 357 150",
+  "adresa": {
+   "ulice": "Kpt. Nálepku 1927/10",
+   "psc": "031 01",
+   "mesto": "Liptovský Mikuláš",
+   "zeme": "SK"
+  }
+ },
+ "oteviraci_doba": [],
+ "sameas": [
+  "https://www.facebook.com/pages/LTC-LM/508092229216280",
+  "https://www.youtube.com/user/gabrielLTC/videos"
+ ],
+ "cenove_rozpeti": "",
+ "formular": {
+  "endpoint": "",
+  "demo": true,
+  "predmet": "Prihláška z webu"
+ },
+ "nav": [
+  {
+   "text": "Kurzy",
+   "href": "#kurzy"
+  },
+  {
+   "text": "Individuálne lekcie",
+   "href": "#lekcie"
+  },
+  {
+   "text": "Lektori",
+   "href": "#lektori"
+  },
+  {
+   "text": "Poukážka",
+   "href": "#poukazka"
+  },
+  {
+   "text": "Kontakt",
+   "href": "#kontakt"
+  }
+ ]
+}

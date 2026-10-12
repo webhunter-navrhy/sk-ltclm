@@ -1,0 +1,133 @@
+{% extends "_base.html" %}
+{% set titulek = 'Tanečné kurzy Liptovský Mikuláš | Liptovské tanečné centrum' %}
+{% set cesta = '' %}
+{% block obsah %}
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <p class="kicker">Liptovský Mikuláš · viac ako 20 rokov tanca</p>
+      <h1>Tancovať sa dá naučiť v každom veku</h1>
+      <p class="lead">Kurzy spoločenských a latinskoamerických tancov, orientálne brušné tance a individuálne lekcie. Malé skupiny, flexibilné termíny a príjemná atmosféra.</p>
+      <p class="cta"><a class="tlacitko" href="#prihlaska">Prihlásiť sa</a> <a class="tlacitko ghost" href="#kurzy">Pozrieť kurzy</a></p>
+    </div>
+    <div class="hero-foto">{{ img('hero.jpg', 'Tanečný pár v latinskoamerickom tanci', sizes='(min-width: 60rem) 40rem, 100vw') }}</div>
+  </div>
+  <div class="pas"><span class="p1"></span><span class="p2"></span><span class="p3"></span></div>
+</section>
+
+<section class="sekce" id="preco">
+  <div class="wrap">
+    <h2>Prečo práve v LTC</h2>
+    <ul class="body3" role="list">
+      <li><strong>Časová flexibilita</strong><span>Termín sa dá dohodnúť kedykoľvek: ráno, večer aj cez víkend.</span></li>
+      <li><strong>Kurzy na mieru</strong><span>Venujete sa tancom, ktoré Vás bavia. Pri zmiešanej skupine urobíme mix podľa dohody.</span></li>
+      <li><strong>Menšie skupiny</strong><span>Žiadna tlačenica ani „masovka“, lektor sa venuje každému páru.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sekce bledo" id="kurzy">
+  <div class="wrap">
+    <h2>Kurzy pre dospelých</h2>
+    <p class="lead2">Dvojmesačné základné kurzy pre hotovú skupinu alebo partiu. Prihlásiť sa môžete v termíne zápisov alebo priebežne.</p>
+    <div class="kurzy-grid">
+      {% for k in data.kurzy %}<article class="kurz {{ k.farba }}"><p class="stitok">{{ k.stitok }}</p><h3>{{ k.nazev }}</h3><p class="tance">{{ k.tance }}</p><p class="parametre">{{ k.parametre }}</p>{% if k.zaver %}<p class="zaver">{{ k.zaver }}</p>{% endif %}</article>{% endfor %}
+    </div>
+    <h3 class="podnadpis">Celoročné krúžky</h3>
+    <ul class="kruzky" role="list">
+      <li><strong>Hobbydance</strong><span>Štandard a latina pre pokročilé páry</span><em>každý utorok od 19:00 · 1× 60 min týždenne</em></li>
+      <li><strong>Safira</strong><span>Brušné tance pre pokročilé tanečnice</span><em>každý pondelok od 18:00 · 1× 60 min týždenne</em></li>
+      <li><strong>Latino ženy</strong><span>Latinskoamerické tance pre ženy</span><em>každý pondelok od 19:00</em></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sekce" id="lekcie">
+  <div class="wrap dve">
+    <div>
+      <h2>Individuálne lekcie</h2>
+      <p class="lead2">Intenzívna hodina zameraná na tance podľa Vášho výberu. Vhodné, keď nemôžete pravidelne chodiť na kurzy alebo Vám viac vyhovuje súkromie.</p>
+      <p class="aktualita"><strong>Jesenný štart:</strong> súkromné lekcie tanca, 90 min za 69 €.</p>
+      <ul class="moznosti" role="list">
+        <li>jeden lektor a jeden pár – spoločenské tance a latino</li>
+        <li>jeden lektor a dve osoby – orient a latino ženy</li>
+        <li>jeden lektor a jedna osoba – ak nemáte s kým tancovať</li>
+      </ul>
+    </div>
+    <div class="ceny">
+      {% for l in data.lekcie %}<article class="cena"><div><h3>{{ l.nazev }}</h3><p>{{ l.popis }}</p></div><p class="suma">{{ l.cena }}</p></article>{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="sekce tmava" id="lektori">
+  <div class="wrap">
+    <h2>Lektori</h2>
+    <p class="lead2">Výborní tanečníci, úspešní tréneri a kvalifikovaní učitelia tanca. V minulosti spolu tvorili súťažný pár v športovom tanci a dosiahli výkonnostnú triedu „A“ v štandardných aj latinskoamerických tancoch.</p>
+    <div class="lektori">
+      <article><div class="foto">{{ img('gabriel.jpg', 'Gabriel Pinteš, lektor spoločenských a latinskoamerických tancov', sizes='(min-width: 40rem) 18rem, 70vw') }}</div><h3>Gabriel Pinteš</h3><p>Spoločenské tance, latino</p></article>
+      <article><div class="foto">{{ img('evka.jpg', 'Evka, lektorka orientálnych brušných tancov', sizes='(min-width: 40rem) 18rem, 70vw') }}</div><h3>Evka</h3><p>Orientálne brušné tance</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="sekce" id="poukazka">
+  <div class="wrap poukaz">
+    <div>
+      <h2>Darčeková poukážka</h2>
+      <p class="lead2">Obdarujte svojich blízkych netradičným darčekom. Poukážka sa dá použiť na uhradenie kurzovného.</p>
+    </div>
+    <ul class="hodnoty" role="list">
+      <li><strong>99 €</strong><span>2 lekcie</span></li>
+      <li><strong>195 €</strong><span>4 lekcie</span></li>
+      <li><strong>290 €</strong><span>6 lekcií</span></li>
+    </ul>
+    <p class="poznamka">Platnosť 3 mesiace od vystavenia, poukážka je prenosná a využiť sa dá v celej hodnote v rámci jednej platby. Objednávky na <a href="tel:+421905357150">0905 357 150</a>.</p>
+  </div>
+</section>
+
+<section class="sekce bledo" id="priebeh">
+  <div class="wrap">
+    <h2>Ako to celé prebieha</h2>
+    <ol class="kroky-list" role="list">
+      <li><span>1</span>Prihlásite sa na kurz v termíne zápisov alebo priebežne, keď máte chuť tancovať.</li>
+      <li><span>2</span>SMS-kou Vás pozveme na prvé stretnutie kurzu. Dohodneme tréningy a upresníme náplň.</li>
+      <li><span>3</span>Za kurz zaplatíte na prvej lekcii.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sekce" id="prihlaska">
+  <div class="wrap dve">
+    <div>
+      <h2>Prihláška</h2>
+      <p class="lead2">Na prvú lekciu Vás pozveme SMS-kou, ale môžete nás pred kurzom aj navštíviť.</p>
+    </div>
+    <form class="formular" method="post" data-endpoint="" data-demo="1">
+      <label>Meno a priezvisko <input name="jmeno" autocomplete="name" required></label>
+      <label>Mobil <input name="telefon" type="tel" autocomplete="tel" required></label>
+      <label>E-mail <input name="email" type="email" autocomplete="email"></label>
+      <label>Kurz / lekcie <select name="kurz"><option>Venčekový kurz – spoločenské tance</option><option>Latino kurz</option><option>Orient kurz</option><option>Individuálne lekcie</option><option>Svadobný tanec</option><option>Pro-Am – tancovanie s lektorom</option><option>Vlastný výber tancov</option></select></label>
+      <label>Poznámka <textarea name="zprava" rows="4"></textarea></label>
+      <label class="gdpr"><input type="checkbox" required> Súhlasím so spracovaním osobných údajov (meno, priezvisko, e-mail, telefón) na účel registrácie alebo zaslania ponuky.</label>
+      <div class="past" aria-hidden="true"><label>Nevyplňovať <input name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+      <button type="submit">Odoslať prihlášku</button>
+      <p class="formular-stav" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<section class="sekce bledo" id="kontakt">
+  <div class="wrap dve">
+    <div>
+      <h2>Kontakt</h2>
+      <p><strong>Liptovské tanečné centrum, o. z.</strong><br>Kpt. Nálepku 1927/10 (kancelária)<br>031 01 Liptovský Mikuláš</p>
+      <p><strong>Tanečná sála</strong><br>SZUŠ, ul. 1. mája (oproti ČSOB)<br>Liptovský Mikuláš</p>
+      <p>Gabriel Pinteš · <a href="tel:+421905357150">+421 905 357 150</a><br><a href="mailto:ozltclm@gmail.com">ozltclm@gmail.com</a></p>
+      <p>Orientálne tance (Evka) · <a href="tel:+421948714704">0948 714 704</a></p>
+      <p class="soc"><a href="https://www.facebook.com/pages/LTC-LM/508092229216280" rel="noopener">Facebook</a> · <a href="https://www.youtube.com/user/gabrielLTC/videos" rel="noopener">YouTube</a></p>
+    </div>
+    <div class="foto-vchod">{{ img('sala.jpg', 'Vchod do tanečnej sály LTC na ulici 1. mája', sizes='(min-width: 60rem) 30rem, 100vw') }}</div>
+  </div>
+</section>
+{% endblock %}
